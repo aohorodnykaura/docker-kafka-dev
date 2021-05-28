@@ -1,12 +1,12 @@
 # docker-kafka-dev
 
 ```
-version: "3.8"
-services:
-  kafka:
-    image: aohorodnykpango/kafka-dev:2.8.0
-    hostname: kafka
-    container_name: kafka
-    ports:
-      - "127.0.0.1:9092:9092"
+kafka:
+  image: aohorodnykpango/kafka-dev:latest
+  hostname: kafka
+  container_name: kafka
+  environment:
+    KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+  ports:
+    - "127.0.0.1:9092:9092"
 ```
